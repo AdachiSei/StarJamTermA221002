@@ -25,6 +25,7 @@ public class BulletIns : MonoBehaviour
 
     IEnumerator BulletCoolTime()
     {
+
         yield return new WaitForSeconds(1f);
         _isbullet = false;
     }
