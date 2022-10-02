@@ -8,28 +8,18 @@ public class Player : MonoBehaviour
     [Header("スピード")]
     float _speed = 0f;
 
+    Rigidbody2D _rb2d;
+
+    void Start()
+    {
+        _rb2d = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
-        Vector2 position = transform.position;
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            position.x -= _speed;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            position.x += _speed;
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            position.y += _speed;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            position.y -= _speed;
-        }
-
-        transform.position = position;
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+        //_rb2d.AddForce(new Vector2(x, y), ForceMode2D.Force);
+        _rb2d.velocity = (new Vector2(x, y) * _speed);
     }
 }
