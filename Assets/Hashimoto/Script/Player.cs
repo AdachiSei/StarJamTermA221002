@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.TryGetComponent(out IEffect effect))
+        {
+            effect.IEffect();
+        }
     }
 }

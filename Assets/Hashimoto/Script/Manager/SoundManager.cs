@@ -10,12 +10,14 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     const string GAME_SCENE_NAME = "GameScene";
     const string RESULT_SCENE_NAME = "ResultScene";
 
-    AudioSource _audioSource;
+    AudioSource _audioSource;// 音を鳴らすためのもの
 
     [SerializeField]
+    [Header("効果音系")]
     SoundSFX[] _soundSFX;
 
     [SerializeField]
+    [Header("BGM系")]
     SoundBGM[] _soundBGM;
 
 
@@ -51,6 +53,8 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         _audioSource.Play();
     }
 
+    /// <summary>シーンによってBGMを変える関数</summary>
+    /// <param name="type">シーンタイプ</param>
     public void PlayBGM(BGMType type)
     {
         var s = Array.Find(_soundBGM, e => e.Type == type);
@@ -64,6 +68,8 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         }
     }
 
+    /// <summary>効果音を鳴らすための関数</summary>
+    /// <param name="type">効果音タイプ</param>
     public void PlaySFX(SFXType type)
     {
         var s = Array.Find(_soundSFX, e => e.Type == type);
