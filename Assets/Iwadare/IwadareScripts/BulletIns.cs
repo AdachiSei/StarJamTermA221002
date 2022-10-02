@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletIns : MonoBehaviour
 {
     [SerializeField] GameObject _waterBullet;
+    [SerializeField] float _bulletCoolTime = 1f;
     bool _isbullet;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class BulletIns : MonoBehaviour
     IEnumerator BulletCoolTime()
     {
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_bulletCoolTime);
         _isbullet = false;
     }
 }

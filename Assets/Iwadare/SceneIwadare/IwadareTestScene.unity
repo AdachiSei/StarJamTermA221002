@@ -1595,6 +1595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4656523404025025679, guid: 282c5bd09a54c754f9869a1efb7ea3f0, type: 3}
+      propertyPath: _bulletCoolTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 282c5bd09a54c754f9869a1efb7ea3f0, type: 3}
 --- !u!1001 &7369724435938318377
@@ -1616,9 +1620,33 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 7369724434347361773, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369724434347361773, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369724434540887072, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369724434540887072, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7369724434540887073, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
       propertyPath: m_TagString
       value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369724435089124366, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369724435089124366, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 7369724435089124367, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
       propertyPath: m_TagString
@@ -1627,6 +1655,14 @@ PrefabInstance:
     - target: {fileID: 7369724435402564136, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
       propertyPath: m_TagString
       value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369724435402564139, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369724435402564139, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7975976101839228463, guid: 13c46cb47f64d664c9940d9651340c39, type: 3}
       propertyPath: m_RootOrder
