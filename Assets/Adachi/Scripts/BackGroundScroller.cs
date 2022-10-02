@@ -19,6 +19,7 @@ public class BackGroundScroller : MonoBehaviour
     bool _isPlay = true;
 
     const int ONE = 1;
+    const int THREE = 3;
 
     void Awake()
     {
@@ -35,11 +36,11 @@ public class BackGroundScroller : MonoBehaviour
 
             if (_background[0].gameObject.transform.position.x <= _warpPosX)
             {
-                _background[0].gameObject.transform.position = new Vector3(-_warpPosX, 0f);
+                _background[0].gameObject.transform.position = new Vector3(-_warpPosX, 0f ,THREE);
             }
             else if (_background[ONE].gameObject.transform.position.x <= _warpPosX)
             {
-                _background[ONE].gameObject.transform.position = new Vector3(-_warpPosX, 0f);
+                _background[ONE].gameObject.transform.position = new Vector3(-_warpPosX, 0f,THREE);
             }
         }
     }

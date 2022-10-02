@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
 {
+    protected override void Awake()
+    {
+        base.Awake();
+        SceneManager.LoadSceneAsync("TitleScene");
+    }
+
     /// <summary>シーンのロード</summary>
     /// <param name="sceneName"></param>
     public void SceneLoad(string sceneName)

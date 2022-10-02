@@ -9,10 +9,17 @@ public class EnemyItem : ItemBase
     [Header("リザルトシーンに行くまでの時間")]
     int _nextSceneSeconds = 1000;
 
+    const string SCENE_NAME = "ResultScene";
+
     protected override async void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
-        await Task.Delay(_nextSceneSeconds);
-        //SceneLoaderを読み出す
+        if(collision.TryGetComponent(out Player player))
+        {
+            collision.gameObject.SetActive(false);
+            await Task.Delay(_nextSceneSeconds);
+            //SceneLoaderを読み出す
+            SceneLoader.Instance.SceneLoad(SCENE_NAME);
+        }
+        base.OnTriggerEnter2D(collision);
     }
 }

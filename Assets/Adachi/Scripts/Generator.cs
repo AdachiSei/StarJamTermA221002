@@ -52,7 +52,7 @@ public class Generator : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(0f, _coolTime));
             _probability = Random.Range(0, _sum);
             _index = _probabilityData.TakeWhile(x => x <= _probability).ToArray().Length;
-            if (_index >= THREE) _index--; 
+            if (_index >= THREE) _index--;
             Debug.Log(_index);
             _pos = new Vector2(TEN_F,Random.Range(-FIVE_F,TWO_F));
             Instantiate(_items[_index].ItemData.Item,_pos,Quaternion.identity,gameObject.transform);

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41ba5fc862320e3408a76903e013adb8, type: 3}
-  m_Name: JumpItemData
+  m_Name: Enemy2ItemData
   m_EditorClassIdentifier: 
-  _type: 2
-  _item: {fileID: 6145505657691201214, guid: 23347ebfe99f9354fa4b82471a37c2db, type: 3}
+  _type: 3
+  _item: {fileID: 6344627159983593769, guid: 39b2ef035d5dbd94d92a3fb46fa975b1, type: 3}

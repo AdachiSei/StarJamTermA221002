@@ -29,4 +29,10 @@ public class Player : MonoBehaviour
             effect.IEffect();
         }
     }
+
+    private void OnDisable()
+    {
+        SoundManager.Instance.StopBGM();
+        SoundManager.Instance.PlaySFX(SFXType.Death);
+    }
 }

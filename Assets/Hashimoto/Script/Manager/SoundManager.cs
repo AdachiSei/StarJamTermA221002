@@ -83,6 +83,11 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         }
     }
 
+    public void StopBGM()
+    {
+        _audioSource.Stop();
+    }
+
     [Serializable]
     public class SoundSFX
     {
