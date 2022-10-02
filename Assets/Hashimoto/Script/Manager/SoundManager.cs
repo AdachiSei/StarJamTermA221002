@@ -13,7 +13,10 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     AudioSource _audioSource;
 
     [SerializeField]
-    SoundSFX[] _soundList;
+    SoundSFX[] _soundSFX;
+
+    [SerializeField]
+    SoundBGM[] _soundBGM;
 
 
     protected override void Awake()
@@ -33,15 +36,15 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         switch (SceneManager.GetActiveScene().name)
         {
             case TITLE_SCENE_NAME:
-                //_audioSource.clip = _soundList[];
+                PlayBGM(BGMType.Title);
                 break;
 
             case GAME_SCENE_NAME:
-                //_audioSource.clip = _soundList[];
+                PlayBGM(BGMType.Game);
                 break;
 
             case RESULT_SCENE_NAME:
-                //_audioSource.clip = _soundList[2].Clips;
+                PlayBGM(BGMType.Result);
                 break;
         }
 
@@ -50,27 +53,20 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
 
     public void PlayBGM(BGMType type)
     {
-        switch (type)
+        var s = Array.Find(_soundBGM, e => e.Type == type);
+        if (s != null)
         {
-            case BGMType.Title:
-                //_audioSource.clip = _soundList[0].Clips;
-                break;
-
-            case BGMType.Game:
-                //_audioSource.clip = _soundList[1].Clips;
-                break;
-
-            case BGMType.Result:
-                //_audioSource.clip = _soundList[2].Clips;
-                break;
+            _audioSource.PlayOneShot(s.Clip);
         }
-
-        _audioSource.Play();
+        else
+        {
+            Debug.LogError("AudioClip‚ª–³‚¢‚Å‚·");
+        }
     }
 
     public void PlaySFX(SFXType type)
     {
-        var s = Array.Find(_soundList, e => e.Type == type);
+        var s = Array.Find(_soundSFX, e => e.Type == type);
         if(s != null)
         {
             _audioSource.PlayOneShot(s.Clip);
@@ -95,10 +91,13 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         AudioClip _clip;
 
     }
+
     [Serializable]
     public class SoundBGM
     {
         public AudioClip Clip => _clip;
+
+        public BGMType Type => _type;
 
         [SerializeField]
         BGMType _type;
