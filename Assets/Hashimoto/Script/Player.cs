@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [Header("スピード")]
     float _speed = 0f;
 
-    Rigidbody2D _rb2d;
+    Rigidbody2D _rb2d;// 剛体
 
     void Start()
     {
@@ -19,7 +19,11 @@ public class Player : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        //_rb2d.AddForce(new Vector2(x, y), ForceMode2D.Force);
         _rb2d.velocity = (new Vector2(x, y) * _speed);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 }

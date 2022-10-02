@@ -12,7 +12,14 @@ public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
         StartCoroutine(SceneLoadTime(sceneName));
     }
 
+    /// <summary>リトライ機能</summary>
+    public void ActiveSceneLoad()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
+    /// <summary>使うか分からない関数。</summary>
+    /// <param name="sceneName"></param>
     public void ResultSceneLoad(string sceneName)
     {
         SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
